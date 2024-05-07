@@ -41,7 +41,7 @@ namespace Lecture6_HW
             else
             {
                 var res = "";
-                foreach(var student in Students)
+                foreach (var student in Students)
                 {
                     res += student.Name + " ";
                 }
@@ -76,29 +76,16 @@ namespace Lecture6_HW
             Students.Remove(student);
         }
 
-        public string RemoveStudentFromTeacher(string name)
+        public void RemoveStudentFromTeacher(string name)
         {
-            if (Students.Count == 0 || Students == null)
+            if (name.Length >= 3)
             {
-                return "Students are empty for this course";
+                Students.RemoveAll(x => x.Name.Contains(name));
             }
             else
             {
-                foreach (var student in Students)
-                {
-                    if (student.Name.Contains(name))
-                    {
-                        Students.Remove(student);
-                        return $"Student {student} removed";
-                    }
-                    else
-                    {
-                        return $"Student with name {name} was not found";
-                    }
-                }
+                Console.WriteLine("No such students found");
             }
-            //I can't understand for now why this return required.
-            return "";
         }
 
         public int GetStudentsCount()
@@ -116,7 +103,7 @@ namespace Lecture6_HW
             Courses.Remove(course);
         }
 
-        public int GetCoursesCount() 
+        public int GetCoursesCount()
         {
             return Courses.Count();
         }
