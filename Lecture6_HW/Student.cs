@@ -14,14 +14,38 @@ namespace Lecture6_HW
         {
             this.Name = name;
             this.Age = age;
+            this.Courses = new List<Course>();
         }
 
         public override string DescribeYourself()
         {
-            return $"Student: Name - {Name}, Age - {Age}";
+            var result = "Student Information: \n\n";
+
+            result += $"Name: {Name} \n";
+            result += $"Age: {Age} \n";
+            result += $"Courses: {GetCourses()} \n";
+
+            return result;
         }
 
-       public void AddCourseToStudent(Course course)
+        private string GetCourses()
+        {
+            if (Courses.Count == 0)
+            {
+                return "None";
+            }
+            else
+            {
+                var res = "";
+                foreach (var course in Courses)
+                {
+                    res += course.CourseName + " ";
+                }
+                return res;
+            }
+        }
+
+        public void AddCourseToStudent(Course course)
         {
             Courses.Add(course);
         }

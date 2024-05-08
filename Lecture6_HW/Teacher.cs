@@ -12,6 +12,10 @@ namespace Lecture6_HW
         public List<Student> Students;
         public List<Course> Courses;
 
+        public Teacher() 
+        { 
+        }
+
         public Teacher(string name, int age) : base(name, age)
         {
             Name = name;

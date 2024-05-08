@@ -25,5 +25,7 @@ namespace Lecture6_HW
         {
             return $"Person: Name - {Name}, Age - {Age}";
         }
+
+
     }
 }

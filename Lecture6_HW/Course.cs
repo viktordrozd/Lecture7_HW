@@ -19,6 +19,8 @@ namespace Lecture6_HW
         {
             this.CourseId = courseId;
             this.CourseName = courseName;
+            this.Teacher = new Teacher();
+            this.Students = new List<Student>();    
         }
 
 

@@ -53,6 +53,31 @@ namespace Lecture6_HW
             //Printing Teacher
             Console.WriteLine(teacher1.DescribeYourself());
 
+            //Adding courses to Student
+            student1.AddCourseToStudent(alchemy);
+            student1.AddCourseToStudent(philosophy);
+
+            //Printing Student
+            Console.WriteLine(student1.DescribeYourself());
+
+            //Adding Students to Course
+            alchemy.AddStudentToCourse(student1);
+            alchemy.AddStudentToCourse(student2);
+
+
+            //printing students
+            Console.WriteLine(student1.DescribeYourself());
+            Console.WriteLine(student2.DescribeYourself());
+
+            //adding teacher to Course
+            alchemy.Teacher = teacher1;
+            philosophy.Teacher = teacher2;
+
+            //printing courses
+            Console.WriteLine(alchemy.PrintCourse());
+            Console.WriteLine(philosophy.PrintCourse());
+
+
         }
     }
 }
