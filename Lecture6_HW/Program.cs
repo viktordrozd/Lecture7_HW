@@ -15,6 +15,11 @@ namespace Lecture6_HW
             //- add a collection of courses to the teacher
             //- implement collection management methods(add, remove, get the number of elements in the collection)
 
+            //The purpose of homework is to finalize the project with students and teachers. Make sure that you have completed all of the listed functions or add them:
+            //-displaying all students on the screen(it is obligatory to display all courses for each student)
+            //-displaying all teachers(it is obligatory to display all courses for each teacher)
+            //-displaying all courses(for each course, display the teacher and all students)
+
             var philosophy = new Course("1", "Philosophy");
             var alchemy = new Course("2", "Alchemy");
 
@@ -23,6 +28,10 @@ namespace Lecture6_HW
 
             var teacher1 = new Teacher("Phil Philips", 40);
             var teacher2 = new Teacher("Alch Alchy", 555);
+
+            var allStudents = new List<Student>();
+            var allTeachers = new List<Teacher>();
+            var allCourses = new List<Course>();
 
 
             //Adding Students to Teacher
@@ -77,7 +86,58 @@ namespace Lecture6_HW
             Console.WriteLine(alchemy.PrintCourse());
             Console.WriteLine(philosophy.PrintCourse());
 
+            Console.WriteLine("=========================================");
+
+            allCourses.Add(alchemy);
+            allCourses.Add(philosophy);
+
+            allStudents.Add(student1);
+            allStudents.Add(student2);
+
+            allTeachers.Add(teacher1);
+            allTeachers.Add(teacher2);
+
+            //printing all courses
+            Console.WriteLine(PrintAllCourses(allCourses));
+
+            //printing all students
+            Console.WriteLine(PrintAllStudents(allStudents));
+
+            //printint all teachers
+            Console.WriteLine(PrintAllTeachers(allTeachers));
+
+
 
         }
+        public static string PrintAllCourses(List<Course> courses)
+        {
+            var allCourses = "";
+            foreach (var course in courses)
+            {
+                allCourses += course.PrintCourse() + "\n";
+            }
+            return allCourses;
+        }
+
+        public static string PrintAllStudents(List<Student> students) 
+        {
+            var allStudents = "";
+            foreach (var student in students)
+            {
+                allStudents += student.DescribeYourself() + "\n";
+            }
+            return allStudents;
+        }
+
+        public static string PrintAllTeachers(List<Teacher> teachers)
+        {
+            var allTeachers = "";
+            foreach (var teacher in teachers)
+            {
+                allTeachers += teacher.DescribeYourself() + "\n";
+            }
+            return allTeachers;
+        }
+
     }
 }
