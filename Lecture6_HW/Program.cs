@@ -38,6 +38,9 @@ namespace Lecture6_HW
             teacher1.AddStudentToTeacher(student1);
             teacher1.AddStudentToTeacher(student2);
 
+            teacher2.AddStudentToTeacher(student1);
+            teacher2.AddStudentToTeacher(student2);
+
             //Printing Teacher
             Console.WriteLine(teacher1.DescribeYourself());
 
@@ -98,35 +101,16 @@ namespace Lecture6_HW
             allTeachers.Add(teacher2);
 
             //printing all courses
-            Console.WriteLine(PrintAllCourses(allCourses));
+            Console.WriteLine(teacher1.PrintAllCourses(allCourses));
 
             //printing all students
-            Console.WriteLine(PrintAllStudents(allStudents));
+            Console.WriteLine(teacher1.PrintAllStudents(allStudents));
 
             //printint all teachers
             Console.WriteLine(PrintAllTeachers(allTeachers));
 
 
 
-        }
-        public static string PrintAllCourses(List<Course> courses)
-        {
-            var allCourses = "";
-            foreach (var course in courses)
-            {
-                allCourses += course.PrintCourse() + "\n";
-            }
-            return allCourses;
-        }
-
-        public static string PrintAllStudents(List<Student> students) 
-        {
-            var allStudents = "";
-            foreach (var student in students)
-            {
-                allStudents += student.DescribeYourself() + "\n";
-            }
-            return allStudents;
         }
 
         public static string PrintAllTeachers(List<Teacher> teachers)

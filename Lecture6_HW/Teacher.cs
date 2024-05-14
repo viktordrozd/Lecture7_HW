@@ -111,5 +111,25 @@ namespace Lecture6_HW
         {
             return Courses.Count();
         }
+
+        public string PrintAllCourses(List<Course> courses)
+        {
+            var res = "";
+            foreach(var course in courses)
+            {
+                res += course.PrintCourse() + "\n";
+            }
+            return res;
+        }
+
+        public string PrintAllStudents(List<Student> students)
+        {
+            var allStudents = "";
+            foreach (var student in students)
+            {
+                allStudents += student.DescribeYourself() + "\n";
+            }
+            return allStudents;
+        }
     }
 }
